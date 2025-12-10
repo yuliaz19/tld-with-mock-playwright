@@ -1,5 +1,5 @@
 import { Locator, Page } from '@playwright/test'
-import { faker } from '@faker-js/faker';
+import { faker } from '@faker-js/faker'
 
 export class OrderPage {
   readonly page: Page
@@ -25,5 +25,4 @@ export class OrderPage {
     await this.commentField.fill(faker.lorem.words(5))
     await this.createOrderButton.click()
   }
-
 }

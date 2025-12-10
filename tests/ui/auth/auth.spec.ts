@@ -24,7 +24,6 @@ test('Sign in positive flow with mock', async ({ page }) => {
 })
 
 test('Sign in negative flow with mock', async ({ page }) => {
-
   await page.route('**/login/student', async (route) => {
     await route.fulfill({
       // no body
@@ -58,7 +57,7 @@ test('Sign in and create order with mock', async ({ page }) => {
     customerName: 'Iulia',
     customerPhone: '123456',
     comment: 'test',
-    id: 13998
+    id: 13998,
   }
   await page.route('**/orders', async (route) => {
     await route.fulfill({
@@ -102,7 +101,7 @@ test('Sign in and get order by id with mock', async ({ page }) => {
     customerName: 'Iulia',
     customerPhone: '123456',
     comment: 'test',
-    id: 13998
+    id: 13998,
   }
   await page.route('**/orders/13998', async (route) => {
     await route.fulfill({
@@ -124,8 +123,8 @@ test('Sign in and get order by id with mock', async ({ page }) => {
   await inputOrderField.fill('13998')
   const trackButton = page.getByTestId('searchOrder-submitButton')
   await trackButton.click()
-  await expect (page.getByTestId('status-item-0')).toBeVisible()
-  await expect (page.getByText('OPEN')).toBeVisible()
+  await expect(page.getByTestId('status-item-0')).toBeVisible()
+  await expect(page.getByText('OPEN')).toBeVisible()
 })
 
 test('Sign in and get order ACCEPTED order with mock', async ({ page }) => {
@@ -144,7 +143,7 @@ test('Sign in and get order ACCEPTED order with mock', async ({ page }) => {
     customerName: 'Iulia',
     customerPhone: '123456',
     comment: 'test',
-    id: 13998
+    id: 13998,
   }
   await page.route('**/orders/13998', async (route) => {
     await route.fulfill({
@@ -166,6 +165,6 @@ test('Sign in and get order ACCEPTED order with mock', async ({ page }) => {
   await inputOrderField.fill('13998')
   const trackButton = page.getByTestId('searchOrder-submitButton')
   await trackButton.click()
-  await expect (page.getByTestId('status-item-0')).toBeVisible()
-  await expect (page.getByText('ACCEPTED')).toBeVisible()
+  await expect(page.getByTestId('status-item-0')).toBeVisible()
+  await expect(page.getByText('ACCEPTED')).toBeVisible()
 })

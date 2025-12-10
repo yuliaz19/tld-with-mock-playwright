@@ -8,7 +8,7 @@ export async function mockCreateOrder(page: Page) {
     customerName: faker.person.firstName(),
     customerPhone: faker.phone.number(),
     comment: faker.lorem.word(),
-    id: faker.number.int()
+    id: faker.number.int(),
   }
 
   await page.route('**/orders', async (route) => {

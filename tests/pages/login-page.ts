@@ -1,6 +1,6 @@
 import { Locator, Page } from '@playwright/test'
 import { SERVICE_URL } from '../../config/env-data'
-import { faker } from '@faker-js/faker';
+import { faker } from '@faker-js/faker'
 import { OrderPage } from './order-page'
 
 export class LoginPage {
