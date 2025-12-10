@@ -1,6 +1,6 @@
 import { Page } from '@playwright/test'
 import { faker } from '@faker-js/faker'
-
+// what was added
 export async function mockOrderStatus(page: Page, id: number, status: string = 'OPEN') {
   const orderResponse = {
     status: status,

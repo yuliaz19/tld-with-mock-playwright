@@ -1,6 +1,6 @@
 import { Locator, Page } from '@playwright/test'
 import { faker } from '@faker-js/faker'
-
+// what was added
 export class OrderPage {
   readonly page: Page
   readonly statusButton

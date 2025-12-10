@@ -8,7 +8,7 @@ import { mockOrderStatus } from '../../mocks/mock-order-status'
 import { LoginPage } from '../../pages/login-page'
 import { runInNewContext } from 'node:vm'
 import { OrderPage } from '../../pages/order-page'
-
+// what was added
 let loginPage: LoginPage
 
 test('Sign in negative flow with mock WITHOUT BEFOREEACH', async ({ page }) => {
