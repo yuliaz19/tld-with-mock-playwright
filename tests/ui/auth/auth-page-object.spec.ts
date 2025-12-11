@@ -29,7 +29,8 @@ test.describe('tests WITH BEFOREEACH', () => {
 
   test('Sign in positive flow with mock', async ({ page }) => {
     const loginPage = new LoginPage(page)
-    await expect(loginPage.openStatusPopupButton).toBeVisible()
+    const orderPage = new OrderPage(page)
+    await expect(orderPage.openStatusPopupButton).toBeVisible()
   })
 
   test('Sign in and create order with mock', async ({ page }) => {
