@@ -41,16 +41,16 @@ test.describe('tests WITH BEFOREEACH', () => {
 
   test('Sign in and get order by id with mock', async ({ page }) => {
     await mockOrderStatus(page, 13998, 'OPEN')
-    const loginPage = new LoginPage(page)
-    await loginPage.trackStatus('13998')
+    const orderPage = new OrderPage(page)
+    await orderPage.trackStatus('13998')
     await expect(page.getByTestId('status-item-0')).toBeVisible()
     await expect(page.getByText('OPEN')).toBeVisible()
   })
 
   test('Sign in and get order ACCEPTED order with mock', async ({ page }) => {
     await mockOrderStatus(page, 13998, 'ACCEPTED')
-    const loginPage = new LoginPage(page)
-    await loginPage.trackStatus('13998')
+    const orderPage = new OrderPage(page)
+    await orderPage.trackStatus('13998')
     await expect(page.getByTestId('status-item-0')).toBeVisible()
     await expect(page.getByText('ACCEPTED')).toBeVisible()
   })

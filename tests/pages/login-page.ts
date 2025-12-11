@@ -9,18 +9,12 @@ export class LoginPage {
   readonly usernameField
   readonly passwordField
   readonly signInButton: Locator
-  readonly openStatusPopupButton: Locator
-  readonly inputOrderField: Locator
-  readonly trackButton: Locator
 
   constructor(page: Page) {
     this.page = page
     this.usernameField = page.getByTestId('username-input')
     this.passwordField = page.getByTestId('password-input')
     this.signInButton = page.getByTestId('signIn-button')
-    this.openStatusPopupButton = page.getByTestId('openStatusPopup-button')
-    this.inputOrderField = page.getByTestId('searchOrder-input')
-    this.trackButton = page.getByTestId('searchOrder-submitButton')
   }
 
   async open() {
@@ -31,11 +25,5 @@ export class LoginPage {
     await this.usernameField.fill(faker.internet.username())
     await this.passwordField.fill(faker.internet.password())
     await this.signInButton.click()
-  }
-
-  async trackStatus(id: string) {
-    await this.openStatusPopupButton.click()
-    await this.inputOrderField.fill(id)
-    await this.trackButton.click()
   }
 }
